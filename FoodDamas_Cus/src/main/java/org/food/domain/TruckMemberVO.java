@@ -2,7 +2,7 @@ package org.food.domain;
 
 import java.sql.Date;
 
-public class MemberVO {
+public class TruckMemberVO {
 
 	private String u_id;
 	private String u_pw;

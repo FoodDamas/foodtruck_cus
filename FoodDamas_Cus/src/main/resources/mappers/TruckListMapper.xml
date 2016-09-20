@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.food.service.TruckListMapper">
+	<select id="distance" resultType="hashmap">
+		select sales.u_id, location,
+		distance,
+		sales_state,
+		u_profile_img, co_name,
+		work_date, grade
+		from
+		(
+		select
+		tbl_ft_sales.u_id,
+		location, SQRT(pow(tbl_ft_sales.lat - #{lat},
+		2) +
+		pow(tbl_ft_sales.lng - ${lng}, 2)) as distance, sales_state,
+		work_date
+		from tbl_ft_sales where sales_state="1" and date(work_date) =
+		date(now()) order by distance
+		) as sales
+
+		inner join tbl_ft_info as info
+		on sales.u_id = info.u_id
+		order by distance
+		limit #{page},8
+	</select>	
+
+</mapper>

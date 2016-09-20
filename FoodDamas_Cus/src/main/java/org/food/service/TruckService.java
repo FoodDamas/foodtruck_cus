@@ -2,7 +2,7 @@ package org.food.service;
 
 import java.util.List;
 
-import org.food.domain.MemberVO;
+import org.food.domain.TruckMemberVO;
 import org.food.domain.PositionVO;
 
 public interface TruckService {
