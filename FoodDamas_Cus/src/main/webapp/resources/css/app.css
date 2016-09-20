@@ -9,15 +9,15 @@ table { margin-top: 10px;  font-family: " "}
 th { font-weight: bold !important;}
 
 table {
-	font-family:'나눔고딕', NanumGothic, 'Nanum Gothic'  !important;;
+	font-family:'�굹�닎怨좊뵓', NanumGothic, 'Nanum Gothic'  !important;;
 	font-size: 14px;
 }
 
-* {font-family:'나눔고딕', NanumGothic, 'Nanum Gothic'  !important;;}
-html {font-family:'나눔고딕', NanumGothic, 'Nanum Gothic'  !important;;}
+* {font-family:'�굹�닎怨좊뵓', NanumGothic, 'Nanum Gothic'  !important;;}
+html {font-family:'�굹�닎怨좊뵓', NanumGothic, 'Nanum Gothic'  !important;;}
 th {
 	
-	font-family: "font-family:'나눔고딕', NanumGothic, 'Nanum Gothic';
+	font-family: "font-family:'�굹�닎怨좊뵓', NanumGothic, 'Nanum Gothic';
 	border-bottom-width: 1px;
 	font-weight: bold;
 	vertical-align: middle !important;
@@ -60,7 +60,7 @@ td {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.glyphicon-asterisk:before {
+/* .glyphicon-asterisk:before {
   content: "\2a";
 }
 .glyphicon-plus:before {
@@ -834,8 +834,8 @@ td {
 }
 .glyphicon-menu-up:before {
   content: "\e260";
-}
-* {
+}*/
+* { 
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -2742,7 +2742,7 @@ select[multiple].form-group-lg .form-control {
 }
 .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 7px  5px 0 5px ;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: normal;
@@ -3638,6 +3638,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li {
   position: relative;
   display: block;
+  width: 24.5%; margin-left:2px;
+  border:1px solid #cccccc;
+  text-align: center;
 }
 .nav > li > a {
   position: relative;
@@ -3675,7 +3678,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   max-width: none;
 }
 .nav-tabs {
-  border-bottom: 1px solid #ddd;
 }
 .nav-tabs > li {
   float: left;
@@ -4901,7 +4903,7 @@ th {vertical-align: middle !important; height: 30px !important;}
 .list-group-item {
   position: relative;
   display: block;
-  padding: 10px 15px;
+  padding: 1px 10px 10px 10px;
   margin-bottom: -1px;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -6344,7 +6346,7 @@ html, body {
   width: auto !important;
   min-width: 320px;
   letter-spacing: 0;
-  font-family:'맑은고딕', malgun gothic,'돋움',Dotum,'Apple SD Gothic Neo',Helvetica,sans-serif;
+  font-family:'留묒�怨좊뵓', malgun gothic,'�룍��',Dotum,'Apple SD Gothic Neo',Helvetica,sans-serif;
 }
 .panel {
   border-radius: 0;
@@ -6719,14 +6721,16 @@ select::-ms-expand { display: none; }
   overflow: hidden;
 }
 .ico-star {
-  background: url(../image/sprite-icon.png?v=ce97573c625fac25feeb25fc93cefe7868d8d999) no-repeat -2px -29px;
-  background-size: 150px;
-  display: inline-block;
-  text-indent: -999em;
-  overflow: hidden;
-  width: 13px;
-  height: 15px;
+  color: rgb(255, 204 ,0000); line-height: 30px;
+  
 }
+.re_date { font-size: 11px; color: #cccccc;}
+.re_name { color: #cccccc; font-size: 11px}
+.re_content { font-size: 13px; line-height: 20px;}
+.menui{ width: 20%; min-width:84px; float: left;  height:60px;}
+.menuu{ width: 80%; float: left;  }
+
+
 .ico-star-empty {
   background: url(../image/sprite-icon.png?v=ce97573c625fac25feeb25fc93cefe7868d8d999) no-repeat -15px -29px;
   background-size: 150px;
@@ -6981,11 +6985,11 @@ li.active .ico-ct10 {
 }
 .menu-list li {
   padding:10px;
-/*   border-top:1px solid #d9d9d9;
- */}
-/* .sub-list li:first-child {
+  border-top:1px solid #d9d9d9;
+}
+.sub-list li:first-child {
   border-top: none;
-} */
+}
 .menu-list .panel-group .panel + .panel {
   margin-top: 0;
 }
@@ -6993,6 +6997,8 @@ li.active .ico-ct10 {
   padding-top:3px;
   padding-left: 0;
 }
+
+.menu-name { font-size: 15px !important }
 .menu-list h4 .menu-name {
   width: 90%;
 }
@@ -7092,36 +7098,28 @@ li.active .ico-ct10 {
 .btn-del-menu:hover,
 .btn-del-menu:focus,
 .btn-del-menu:active {
-   background:url(../image/sprite-icon.png) no-repeat -228px -32px;
-   background-size: 280px;
-   width: 24px;
-   height: 24px;
-   border: none;
-   border-radius: 0;
-   text-indent: -999em;
-   overflow: hidden;
+  width: 60px;
+  height: 28px;
+  border:1px solid #cccccc;
+  line-height:14px;
+  font-size: 13px;
 }
-.btn-minus,
-.btn-minus:hover,
-.btn-minus:focus,
-.btn-minus:active {
-  background:url(../image/sprite-icon.png) no-repeat -200px -32px;
-  background-size: 280px;
-  width: 24px;
-  height: 24px;
-  border: none;
-  border-radius: 0;
+.btn-minus {
+  border:1px solid #cccccc;
+  line-height:10px;
+  font-size: 24px;
+  padding: 3px 13px;
+  
+  font-weight:bold; 
+  
 }
-.btn-plus,
-.btn-plus:hover,
-.btn-plus:focus,
-.btn-plus:active {
-  background:url(../image/sprite-icon.png) no-repeat -172px -32px;
-  background-size: 280px;
-  width: 24px;
-  height: 24px;
-  border: none;
-  border-radius: 0;
+
+.btn-plus {
+
+  border:1px solid #cccccc;
+  line-height:10px;
+  font-size: 22px;
+  padding: 5px 10px;
 }
 .menu-name {
    line-height: 25px;
@@ -7140,8 +7138,9 @@ li.active .ico-ct10 {
   padding-right: 12px;
 }
 .menu-price {
-   font-size: 12px;
+   font-size: 16px !important;
    line-height: 25px;
+   font-weight: bold
 }
 .cart-total-order-price {
   background-color: #fff8eb;
@@ -7168,6 +7167,7 @@ li.active .ico-ct10 {
 .checkout-order-list {
   padding: 0;
 }
+
  .checkout-order-list .list-group-item {
   border: none;
  }
@@ -7733,7 +7733,7 @@ a.biz-info:after {
   color: #C7C7C7;
   display: inline-block;
   vertical-align: middle;
-  content: " ▸ ";
+  content: " �뼵 ";
   height: 100%;
   padding: 0 3px;
 }
@@ -8094,7 +8094,6 @@ a.biz-info:after {
   content: "|";
 }
 .restaurant-detail .nav-tabs {
-  border: 1px solid #d9d9d9;
   border-left: 0;
   margin: 10px 0 0 0;
   padding-bottom:1px ;
@@ -8111,8 +8110,8 @@ a.biz-info:after {
 }
 .restaurant-detail .nav-tabs li.active a {
   border: 0;
-  border-bottom: 5px solid #DC1400;
-  color: #DC1400;
+  border-bottom: 5px solid rgb(255,204,000);
+  color: #000000;
 }
 .restaurant-detail .col-sm-4 {
   padding-left: 0;
@@ -9467,7 +9466,7 @@ a.biz-info:after {
   margin-top: 10px;
 }
 .bpg-content ul li:before {
-  content: '• ';
+  content: '�� ';
 }
 .bpg-content .tit ul li {
   font-size: 12px;
@@ -9481,7 +9480,7 @@ a.biz-info:after {
   padding-top: 5px;
 }
 .bul_txt:before {
-    content: '• ';
+    content: '�� ';
 }
 @media (min-width: 768px) {
   .cl-content,.bpg-content {
@@ -9980,3 +9979,8 @@ html.in_map #content {
       margin-top: -44px;
     }
 }
+
+
+.bb1 { border-bottom:  1px solid #cccccc}
+.Bid {height: 26x; width: 100%; padding: 5px; font-size: 14px;}
+.teB { height: 60px; width: 100%; padding: 5px; font-size: 14px;}
