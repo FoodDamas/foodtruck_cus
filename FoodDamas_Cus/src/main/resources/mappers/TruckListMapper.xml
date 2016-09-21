@@ -7,10 +7,11 @@
 		distance,
 		sales_state,
 		u_profile_img, co_name,
-		work_date, grade
+		work_date, grade, lat, lng
 		from
 		(
 		select
+		lat, lng,
 		tbl_ft_sales.u_id,
 		location, SQRT(pow(tbl_ft_sales.lat - #{lat},
 		2) +

@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.food.domain.MemberVO;
+import org.food.domain.TruckMemberVO;
 import org.food.domain.PositionVO;
 import org.food.persistence.TruckDAO;
 import org.mybatis.spring.SqlSessionTemplate;
