@@ -64,7 +64,6 @@ var homeManager = (function() {
 	
 	
 	function map(data, callback){		
-		
 		// console.log("----map data-----");
 		// console.log(data);
 		var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
@@ -77,7 +76,6 @@ var homeManager = (function() {
 
         // HTML5의 geolocation으로 사용할 수 있는지 확인합니다
         if (navigator.geolocation) {
-
             // GeoLocation을 이용해서 접속 위치를 얻어옵니다
             navigator.geolocation.getCurrentPosition(function(position) {
 
@@ -156,6 +154,7 @@ var homeManager = (function() {
                 image : markerImage // 마커 이미지 
             });
         }
+        
 	}
 	
 	return {

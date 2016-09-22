@@ -33,7 +33,6 @@ public class HomeController {
 	public String home(Model model) {
 		logger.info("home connected....");
 		return "home";
-
 	}
 
 	@CrossOrigin
@@ -49,6 +48,11 @@ public class HomeController {
 		vo.setLng(127.028148);
 		vo.setPage(page);
 		System.out.println(service.distance(vo));
+		System.out.println(service.distanceLength(vo));
+		int distanceLength = service.distanceLength(vo);
+		if(page>distanceLength){
+			return null;
+		}
 		result.put("distance", service.distance(vo));
 		return result;
 
