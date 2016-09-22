@@ -39,10 +39,10 @@ public class HomeController {
 	@CrossOrigin
 	@ResponseBody
 	@RequestMapping(value = "/home/list/{page}", method = RequestMethod.GET)
-	public Map<String, Object> listGET(@PathVariable Integer page) throws Exception {
-
-		page = (page == null ? 1 : page);
+	public Map<String, Object> listGET(@PathVariable Integer page, double lat, double lng) throws Exception {
 		System.out.println("page: " + page);
+		System.out.println("lat: " + lat);
+		System.out.println("lng: " + lng);
 		Map<String, Object> result = new HashMap<>();
 		PositionVO vo = new PositionVO();
 		vo.setLat(37.493488);
@@ -50,7 +50,6 @@ public class HomeController {
 		vo.setPage(page);
 		System.out.println(service.distance(vo));
 		result.put("distance", service.distance(vo));
-
 		return result;
 
 	}

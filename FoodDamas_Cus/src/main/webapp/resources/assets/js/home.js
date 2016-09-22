@@ -1,11 +1,49 @@
 var homeManager = (function() {	
 	var truckList="";
-	function list(page, callback) {
-		if(page==null){
-			page = 0;
-		}		
-		$.getJSON('http://localhost/home/list/'+page, function (data){
+	function getPosition(position, callback){
+		 // HTML5의 geolocation으로 사용할 수 있는지 확인합니다
+        if (navigator.geolocation) {
+            // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var lat = position.coords.latitude, // 위도
+                lng = position.coords.longitude; // 경도
+                /*
+                console.log("------좌표-------");
+                console.log(lat);
+                console.log(lng);
+                */
+                var positionData = new Object();
+                positionData.lat = lat;
+                positionData.lng = lng;
+                getList(positionData);                
+            });
+
+        } else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
+        	console.log("Geolocation 사용 불가");
+        }
+	}
+
+	
+	function getList(data, callback){
+		// console.log("------Get Data-------");
+		// console.log(data);
+		data.page= 0;
+		
+		$.getJSON('http://localhost/home/list/'+data.page, data, function (data){
+			// console.log("--------Get json Data-----");
+			// console.log(data);
 			map(data);
+			
+			// 좌표값이 없는 경우
+			if(data==null){
+				console.log("No data");
+				var data = new Object();
+				data.page = 0;
+				data.lng=37.493488;
+				data.lat=127.028148;
+			}
+			
+			//  list up
 			for(var i=0; i<data.distance.length; i++){
 				var distance= data.distance[i].distance*10000;
 				distance = distance.toFixed(1);
@@ -16,7 +54,9 @@ var homeManager = (function() {
 						"</p><p class='etc'>"+distance+"m</p></div></figure></div></li>"					
 			}
 			$("#list").html(truckList);
+			
 		});
+		
 	}	
 	
 	function moreList(page, callback){		
@@ -35,7 +75,10 @@ var homeManager = (function() {
 		});
 	}
 	
-	function map(data, callback){
+	function map(data, callback){		
+		
+		// console.log("----map data-----");
+		// console.log(data);
 		var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
         var options = { //지도를 생성할 때 필요한 기본 옵션
             center: new daum.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
@@ -92,12 +135,8 @@ var homeManager = (function() {
 
             // 지도 중심좌표를 접속위치로 변경합니다
             map.setCenter(locPosition);
-        }
-        
-        console.log("-----------");
-		console.log(data);
-		console.log("-----------");
-		
+        }        
+
         // 마커를 표시할 위치와 title 객체 배열입니다
         var positions = new Array;
         
@@ -132,9 +171,10 @@ var homeManager = (function() {
 	}
 	
 	return {
+		getPosition : getPosition,
 		map: map,
-		list : list,
-		moreList : moreList
+		moreList : moreList,
+		getList : getList
 	}
 
 })();

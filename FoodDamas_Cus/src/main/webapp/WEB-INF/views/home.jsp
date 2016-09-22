@@ -182,8 +182,8 @@
         
         //map
         
-        // List        
-        homeManager.list();
+        // List & Map Create
+        homeManager.getPosition();
         
         
         // 더보기
