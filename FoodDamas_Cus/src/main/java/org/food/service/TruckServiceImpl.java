@@ -20,6 +20,12 @@ public class TruckServiceImpl implements TruckService {
 		return dao.distance(vo);
 	}
 
+	@Override
+	public Integer distanceLength(PositionVO vo) {
+		// TODO Auto-generated method stub
+		return dao.distanceLength(vo);
+	}
+
 
 
 }

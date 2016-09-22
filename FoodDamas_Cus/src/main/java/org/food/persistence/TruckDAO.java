@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 
 public interface TruckDAO {
 	public List<Object> distance(PositionVO vo);
+	public Integer distanceLength(PositionVO vo);
 }

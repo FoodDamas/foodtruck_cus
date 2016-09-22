@@ -25,6 +25,8 @@ public class TruckListTest {
 		vo.setLng(127.028148);
 		vo.setPage(0);
 		System.out.println(dao.distance(vo));
+		System.out.println(dao.distanceLength(vo));
+		
 	}
 	
 

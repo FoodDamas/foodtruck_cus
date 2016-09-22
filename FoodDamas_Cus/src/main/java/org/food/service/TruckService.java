@@ -7,4 +7,5 @@ import org.food.domain.PositionVO;
 
 public interface TruckService {
 	public List<Object> distance(PositionVO vo);
+	public Integer distanceLength(PositionVO vo);
 }

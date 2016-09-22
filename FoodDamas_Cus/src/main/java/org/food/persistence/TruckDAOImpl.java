@@ -20,4 +20,10 @@ public class TruckDAOImpl implements TruckDAO {
 		return sqlsession.selectList("org.food.service.TruckListMapper.distance", vo);
 	}
 
+	@Override
+	public Integer distanceLength(PositionVO vo) {
+		// TODO Auto-generated method stub
+		return sqlsession.selectOne("org.food.service.TruckListMapper.distanceLength", vo);
+	}
+
 }
