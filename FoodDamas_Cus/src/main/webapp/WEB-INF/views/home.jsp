@@ -135,7 +135,7 @@
 			<ul class="list-restaurants type-main" id="list">				
 
 			</ul>
-			<button class="more_btn" id="more">더보기</button>
+			<button class="more_btn" id="moreList">더보기</button>
 		</div>
 	</article>
 	</main>
@@ -188,10 +188,10 @@
         
         // 더보기
         var page=0;
-		$("#more").on("click", function(){
+		$("#moreList").on("click", function(){
 			console.log("more clicked...");
 			page = page+8;
-			homeManager.moreList(page);
+			homeManager.getPosition(page);
 		});
 		
         /////////////////////////////////////////////////////////////////////////////////////////////

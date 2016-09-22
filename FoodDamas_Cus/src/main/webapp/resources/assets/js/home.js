@@ -1,6 +1,6 @@
 var homeManager = (function() {	
 	var truckList="";
-	function getPosition(position, callback){
+	function getPosition(page, callback){
 		 // HTML5의 geolocation으로 사용할 수 있는지 확인합니다
         if (navigator.geolocation) {
             // GeoLocation을 이용해서 접속 위치를 얻어옵니다
@@ -15,6 +15,7 @@ var homeManager = (function() {
                 var positionData = new Object();
                 positionData.lat = lat;
                 positionData.lng = lng;
+                positionData.page = page;
                 getList(positionData);                
             });
 
@@ -27,7 +28,10 @@ var homeManager = (function() {
 	function getList(data, callback){
 		// console.log("------Get Data-------");
 		// console.log(data);
-		data.page= 0;
+		console.log(data);
+		if(data.page==null){
+			data.page= 0;
+		}
 		
 		$.getJSON('http://localhost/home/list/'+data.page, data, function (data){
 			// console.log("--------Get json Data-----");
@@ -54,26 +58,10 @@ var homeManager = (function() {
 						"</p><p class='etc'>"+distance+"m</p></div></figure></div></li>"					
 			}
 			$("#list").html(truckList);
-			
 		});
-		
 	}	
 	
-	function moreList(page, callback){		
-		$.getJSON('http://localhost/home/list/'+page, function (data){
-			map(data);
-			for(var i=0; i<data.distance.length; i++){
-				var distance= data.distance[i].distance*10000;
-				distance = distance.toFixed(1);
-				truckList += "<li class='restaurant-item'><div class='popular_restaurant_inner_wrap'><figure class='restaurant-item'><div class='thumb' style='background-image: url(img/1.jpg)'></div>" +
-						"<div class='info'><span class='title'>"+data.distance[i].co_name+
-						"</span> <strong class='point search_point'>"+data.distance[i].grade+
-						"</strong><p class='etc'>"+data.distance[i].location+
-						"</p><p class='etc'>"+distance+"m</p></div></figure></div></li>"					
-			}
-			$("#list").append(truckList);
-		});
-	}
+	
 	
 	function map(data, callback){		
 		
